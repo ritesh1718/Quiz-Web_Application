@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question - Quiz</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 th:text="'Add Question for Quiz: ' + ${quiz.title}"></h2>
+
+    <form th:action="@{'/admin/quizzes/' + ${quiz.id} + '/questions/add'}" method="post">
+        <div class="mb-3">
+            <label for="questionText" class="form-label">Question Text</label>
+            <input type="text" class="form-control" id="questionText" name="questionText" required>
+        </div>
+
+        <div class="mb-3" th:each="i : ${#numbers.sequence(1,4)}">
+            <label th:for="'option' + ${i}" th:text="'Option ' + ${i}"></label>
+            <input type="text" class="form-control" th:id="'option' + ${i}" th:name="optionTexts" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="correctOptionIndex" class="form-label">Correct Option</label>
+            <select class="form-select" id="correctOptionIndex" name="correctOptionIndex" required>
+                <option th:value="0">Option 1</option>
+                <option th:value="1">Option 2</option>
+                <option th:value="2">Option 3</option>
+                <option th:value="3">Option 4</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Question</button>
+        <a th:href="@{'/admin/quizzes/' + ${quiz.id} + '/questions'}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

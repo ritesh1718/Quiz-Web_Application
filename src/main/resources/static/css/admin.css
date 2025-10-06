@@ -1,0 +1,89 @@
+/* ==========================
+   ADMIN DASHBOARD
+========================== */
+.admin-container {
+    display: flex;
+    min-height: 80vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #343a40;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #007bff;
+}
+
+/* Content */
+.admin-content {
+    flex: 1;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+/* Forms inside admin */
+.admin-content form input,
+.admin-content form select,
+.admin-content form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.admin-content button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-content button:hover {
+    background: #0056b3;
+}

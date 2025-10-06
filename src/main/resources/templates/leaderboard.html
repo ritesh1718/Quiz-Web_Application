@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard - Online Quiz</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Leaderboard</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="entry, stat : ${leaderboard}">
+            <td th:text="${stat.count}">1</td>
+            <td th:text="${entry.user.username}">Username</td>
+            <td th:text="${entry.score}">0</td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/home}">Back to Dashboard</a>
+</div>
+</body>
+</html>

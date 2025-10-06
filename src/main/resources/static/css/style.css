@@ -1,0 +1,289 @@
+/* ==========================
+   GLOBAL STYLES
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================
+   HEADER & NAV
+========================== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+nav {
+    margin: 30px 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+button,
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active,
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ==========================
+   FORMS
+========================== */
+.form-group {
+    margin: 20px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* ==========================
+   QUIZ CARDS
+========================== */
+.quiz-card {
+    border: 2px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.quiz-card:hover {
+    background: #fff;
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   TABLES
+========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+table tr:hover {
+    background: #f8f9fa;
+}
+
+/* ==========================
+   QUIZ TAKING
+========================== */
+h2, h3 {
+    color: #333;
+    margin: 20px 0 15px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+ul li:hover {
+    background: #e9ecef;
+}
+
+ul li label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+/* ==========================
+   RESULTS
+========================== */
+.result-box {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea10 0%, #764ba220 100%);
+    border: 2px solid #667eea;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.result-box h2 {
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.result-box p {
+    font-size: 1.3em;
+    margin: 10px 0;
+}
+
+/* ==========================
+   DASHBOARD INFO
+========================== */
+.dashboard-info {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea10 0%, #764ba220 100%);
+    border-radius: 15px;
+}
+
+.dashboard-info h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.dashboard-info p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* ==========================
+   MESSAGES
+========================== */
+.error {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.success {
+    color: #388e3c;
+    background: #e8f5e9;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}

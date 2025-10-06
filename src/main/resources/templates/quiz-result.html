@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Result - Online Quiz</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Quiz Result</h2>
+    <p>Score: <span th:text="${score}">0</span> / <span th:text="${total}">0</span></p>
+    <p>Correct Answers: <span th:text="${correct}">0</span></p>
+    <p>Wrong Answers: <span th:text="${wrong}">0</span></p>
+    <a th:href="@{/quizzes}">Back to Quiz List</a>
+    <a th:href="@{/home}">Dashboard</a>
+</div>
+</body>
+</html>

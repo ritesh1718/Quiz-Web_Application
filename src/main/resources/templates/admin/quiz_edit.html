@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Quiz</title>
+</head>
+<body>
+<h1>Edit Quiz</h1>
+
+<form th:action="@{'/admin/quizzes/' + ${quiz.id} + '/edit'}" th:object="${quiz}" method="post">
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" required/><br/>
+
+    <label>Description:</label>
+    <textarea th:field="*{description}" required></textarea><br/>
+
+    <label>Category:</label>
+    <select name="categoryId" required>
+        <option th:each="cat : ${categories}" th:value="${cat.id}"
+                th:text="${cat.name}"
+                th:selected="${quiz.category != null and cat.id == quiz.category.id}"></option>
+    </select><br/>
+
+    <button type="submit">Update</button>
+</form>
+
+<a th:href="@{/admin/quizzes}">Back to Quiz List</a>
+</body>
+</html>

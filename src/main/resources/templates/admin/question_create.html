@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Question</title>
+</head>
+<body>
+<h1>Create Question</h1>
+<form th:action="@{/admin/question/create}" method="post">
+    <label>Question Text:</label>
+    <textarea name="questionText" required></textarea><br/><br/>
+
+    <label>Quiz:</label>
+    <select name="quizId" required>
+        <option th:each="quiz : ${quizzes}" th:value="${quiz.id}" th:text="${quiz.title}"></option>
+    </select><br/><br/>
+
+    <div>
+        <input type="radio" name="correctAnswer" value="A" required> A:
+        <input type="text" name="optionTexts" placeholder="Option A" required><br/>
+        <input type="radio" name="correctAnswer" value="B"> B:
+        <input type="text" name="optionTexts" placeholder="Option B" required><br/>
+        <input type="radio" name="correctAnswer" value="C"> C:
+        <input type="text" name="optionTexts" placeholder="Option C" required><br/>
+        <input type="radio" name="correctAnswer" value="D"> D:
+        <input type="text" name="optionTexts" placeholder="Option D" required><br/>
+    </div><br/>
+
+    <button type="submit">Create Question</button>
+</form>
+
+<a th:href="@{/admin/quizzes}">Back to Quiz List</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Attempts - Online Quiz</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>My Quiz Attempts</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Quiz</th>
+            <th>Score</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="attempt : ${attempts}">
+            <td th:text="${attempt.quiz.title}">Quiz Title</td>
+            <td th:text="${attempt.score}">0</td>
+            <td th:text="${#dates.format(attempt.attemptDate, 'dd/MM/yyyy HH:mm')}">Date</td>
+            <td><a th:href="@{/quizzes/result/{id}(id=${attempt.id})}">View Result</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/home}">Back to Dashboard</a>
+</div>
+</body>
+</html>
